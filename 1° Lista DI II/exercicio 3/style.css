@@ -1,0 +1,59 @@
+body{
+    background-color: rgba(0, 140, 255, 0.185);
+}
+.objeto{
+    width: 800px;
+    height: 310px;
+    background-color: rgb(31, 31, 31);
+    margin: 0 auto;
+    margin-top: 200px;
+    border-radius: 15px
+}
+.objeto h5{
+    text-align: center;
+    color: #fff;
+    padding-top: 10px;
+}
+.visor input[type=text]{
+    width: 700px;
+    height: 45px;
+    border-radius: 5px;
+    border: 0px solid;
+    font-family: "Helvetica";
+    font-weight: normal;
+    font-size: 25px;
+}
+.visor{
+    width: 700px;
+    margin: 0 auto;
+    height: 45px;
+    margin-top: 15px;
+}
+input[type=text]:focus{
+    outline: none;
+}
+.espaco{
+    width: 699px;
+}
+.espaco .btn-light{
+    margin-top: 5px;
+    width: 699px;
+}
+.botoes{
+    width: 700px;
+    height: 120px;
+    margin: 0 auto;
+    user-select: none;
+}
+.btn-linha1{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.btn-linha2{
+    margin-bottom: 5px;
+}
+.btn-light{
+
+}
+
+

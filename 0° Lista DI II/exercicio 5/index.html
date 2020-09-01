@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+
+
+    <style>
+        body{
+        background-color: rgba(0, 140, 255, 0.185);
+        }
+        .corpo{
+            width: 400px;
+            height: 100px;
+            background-color: #000;
+            margin: 0 auto;
+            margin-top: 150px;
+            border-radius: 10px;
+        }
+        .corpo h1{
+            color: #fff;
+            padding-top: 25px;
+            padding-left: 36px;
+        }
+
+
+    </style>
+
+
+
+    <script>
+        type="text/javascript"
+
+        window.onload = () => {
+            var num = "<h1> " ;
+            for(var i = 1; i <= 10; i++) {
+                num = num + " " + i;
+            }
+            num = num + " </h1>"
+            document.getElementById('corpo').innerHTML = num;
+            
+        }
+
+        
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="corpo" id="corpo">
+        </div>
+    </div>
+</body>
+</html>

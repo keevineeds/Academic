@@ -1,0 +1,41 @@
+body{
+    background-color: rgba(0, 140, 255, 0.185);
+}
+.corpo{
+    width: 260px;
+    height: 205px;
+    background-color: #000;
+    margin: 0 auto;
+    margin-top: 150px;
+    border-radius: 15px;
+}
+.inputs{
+    padding-top: 10px;;
+    width: 250px;
+    height: 400px;
+    margin: 0 auto;
+}
+input[type=text]{
+    margin-top: 5px;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+input[type=number]:focus{
+    outline: none;
+}
+input[type=number]{
+    margin-top: 5px;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+input[type=text]:focus{
+    outline: none;
+}
+.btn-light{
+    margin-top: 5px;
+    width: 249px;
+}
