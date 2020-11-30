@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Store</title>
+    <link rel="icon" type="image/png" href="/static/img/icons/icon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+  <%- include('./partials/navbar') %> 
+
+      <div class="container">
+
+        <div class="card pagina-produto">
+            <div class="card-title">
+                <h3><%=produto[0].nomeProd %> </h3>
+            </div>
+            <div class="card-body">
+                <img src="/static/img/produtos/<%= produto[0].foto%>.jpg" id="img-pagina-produto">
+                <p id="desc-produto"><%= produto[0].descricao %></p>
+
+                <% 
+                  let valor = String(produto[0].valorUnitario);
+                  let x = produto[0].valorUnitario; x = (x / 100) * 10;
+                  let valorCheio = produto[0].valorUnitario + x;
+                  valorCheio = valorCheio.toFixed(2).replace(".", "")
+                  valor = valor.replace(".", "")
+
+                  if(valor.length == 6){
+                      valor = "R$ " + valor[0] + '.' + valor[1] + valor[2] + valor[3] + ',' + valor[4] + valor[5];
+                      console.log("valor: " + valor)
+                      valorCheio = "R$ " + valorCheio[0] + '.' + valorCheio[1] + valorCheio[2] + valorCheio[3] + ',' + valorCheio[4] + valorCheio[5];
+                      //console.log('valor cheio: ' + valorCheio);
+                  }
+
+                  if(valor.length == 5){
+                      valor = "R$ " + valor[0] + valor[1] + valor[2] + "," + valor[3] + valor[4];
+                      valorCheio = "R$ " + valorCheio[0] + valorCheio[1] + valorCheio[2] + "," + valorCheio[3] + valorCheio[4];
+
+                  }
+              %>
+                <div class="valores">
+                  <h5>DE <span id="valor-cheio-pagina-produto"><%=valorCheio%></span> POR </h5>
+                  <h2 id="valor-pagina-produto"><%= valor %></h2>
+                  <form method="post" action="/carrinho/<%= produto[0].idProd %>">
+                    <input type="submit" class="btn btn-primary comprar pg-produto"value="Comprar">
+                </form>
+                </div>
+                
+            </div>
+        </div>
+      </div>
+</body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Store</title>
+    <link rel="icon" type="image/png" href="/static/img/icons/icon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+  <%- include('./partials/navbar') %> 
+
+
+      <div class="container">
+
+        <% if(carrinho == null || carrinho == undefined || carrinho.valorTotal == 0) { %>
+          <div class="carrinho-vazio">
+            <h1 id="carrinho-vazio">o seu carrinho está vazio :(</h1>
+            <a href="/"><p>volte a pagina inicial</p></a>
+          </div>
+            
+        <% } else { %>   
+          <h2 id="carrinho-titulo">Estes são os seus produtos:</h2>
+          <div class="carrinho-produtos">
+            <% for(let i = 0; i < carrinho.produtos.length; i++) { %>
+              <div class="carrinho-produto-main">
+                <a href="/produto/<%= carrinho.produtos[i].idProd %>" id="a-prod"><img src="/static/img/produtos/<%= carrinho.produtos[i].fotoProd %>.jpg " id="img-produto-carrinho" alt=""></a>
+                <div class="carrinho-produto-nome">
+                  <a href="/produto/<%= carrinho.produtos[i].idProd %> "><h3><%= carrinho.produtos[i].nomeProd %></h3> </a> 
+                </div>
+                <% 
+                      let valor = String(carrinho.produtos[i].valorUnitario);
+                      let x = carrinho.produtos[i].valorUnitario; x = (x / 100) * 10;
+                      let valorCheio = carrinho.produtos[i].valorUnitario + x;
+                      valorCheio = valorCheio.toFixed(2).replace(".", "")
+                      valor = valor.replace(".", "")
+    
+                      if(valor.length == 6){
+                          valor = "R$ " + valor[0] + '.' + valor[1] + valor[2] + valor[3] + ',' + valor[4] + valor[5];
+                          valorCheio = "R$ " + valorCheio[0] + '.' + valorCheio[1] + valorCheio[2] + valorCheio[3] + ',' + valorCheio[4] + valorCheio[5];
+                      }
+    
+                      if(valor.length == 5){
+                          valor = "R$ " + valor[0] + valor[1] + valor[2] + "," + valor[3] + valor[4];
+                          valorCheio = "R$ " + valorCheio[0] + valorCheio[1] + valorCheio[2] + "," + valorCheio[3] + valorCheio[4];
+    
+                      }
+                  %>
+                <div class="carrinho-produto-preco">
+                  <h2><%= valor %></h2>
+                </div>
+    
+                <div class="carrinho-produto-quantidade">
+                  <h1> <%= carrinho.produtos[i].qtd %> </h1>
+                  <% if(carrinho.produtos[i].qtd == 1) { %> 
+                    <p id="unidade">unidade</p>
+                  <% } else { %>
+                    <p id="unidade">unidades</p>
+                  <% } %> 
+                </div>
+    
+              </div>
+            <% } %> 
+              <div class="botoes-carrinho">
+                <form action="/limpar-carrinho" method="post">
+                  <input type="submit" class="btn btn-primary limpar-carrinho" value="Limpar">
+                </form>
+              
+
+                <% 
+                      let valorFinal = String(carrinho.valorTotal.toFixed(2));
+                      valorFinal = valorFinal.replace(".", "")
+                      
+    
+                      if(valorFinal.length == 7)
+                        valorFinal = "R$ " + valorFinal[0] + valorFinal[1] + '.' + valorFinal[2] + valorFinal[3] +  valorFinal[4] + ',' + valorFinal[5] + valorFinal[6];
+                      
+
+                      if(valorFinal.length == 6)
+                          valorFinal = "R$ " + valorFinal[0] + '.' + valorFinal[1] + valorFinal[2] + valorFinal[3] + ',' + valorFinal[4] + valorFinal[5];
+
+
+                      if(valorFinal.length == 5)
+                          valorFinal = "R$ " + valorFinal[0] + valorFinal[1] + valorFinal[2] + "," + valorFinal[3] + valorFinal[4];
+                      
+                  %>
+                <h3>Total: <%= valorFinal %> </h3>
+                <form action="/checkout" method="get">
+                  <input type="submit" class="btn btn-primary checkout" value="Checkout">
+                </form>
+  
+              </div>
+    
+            <% }%> 
+
+          </div>
+        
+      </div>
+    
+
+
+</body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</html>

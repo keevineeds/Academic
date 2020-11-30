@@ -1,0 +1,485 @@
+*{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+}
+.login{
+    width: 100%;
+    max-width: 350px;
+    height: 100%;
+    max-height: 300px;
+    margin: 0 auto;
+    margin-top: 125px;
+    border-radius: 8px;
+    box-shadow: -3px 3px 6px 5px rgba(0, 0, 0, 0.041);
+}
+.cadastro{
+    width: 100%;
+    max-width: 350px;
+    height: 100%;
+    max-height: 550px;
+    margin: 0 auto;
+    margin-top: 100px;
+    border-radius: 8px;
+    box-shadow: -3px 3px 6px 5px rgba(0, 0, 0, 0.041);
+}
+.login-corpo form{
+    padding: 0px;
+    padding-bottom: 25px;
+
+}
+.pagina-produto{
+    width: 750px;
+    max-height: 660px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 8px;
+    margin-bottom: 100px;
+}
+.pagina-produto h3{
+    text-align: center;
+}
+
+#desc-produto{
+    margin-top: 10px;
+    max-width: 400px;
+    font-size: 10px;
+    grid-column: 1;
+}
+
+.valores h5{
+    text-align: center;
+    margin-top: 25%;
+}
+
+#valor-cheio-pagina-produto{
+    text-align: center;
+    color: rgb(255, 102, 0);
+    font-weight: bold;
+}
+
+#valor-pagina-produto{
+    text-align: center;
+    color: #00b3ff; 
+    margin: 0;
+}
+
+.valores{
+    grid-column: 2;
+    grid-row: 1;
+    margin-left: 30%;
+    margin-top: 22.5%;
+}
+
+.pagina-produto .card-body{
+    display: grid;
+    grid-template-columns: 5.0fr 5.0fr;
+}
+
+#img-pagina-produto{
+    width: 400px;
+    height: 400px;
+
+}
+.cadastro-corpo{
+    height: 500px;
+}
+
+#qtd-index{
+    display: none;
+}
+
+#quantidade:focus{
+    outline: none;
+}
+#cadastro-login{
+    font-size: 11px;
+}
+
+.card-title{
+    height: 71px;
+}
+
+#callback{
+    color: red;
+    font-size: 11px;
+    margin-left: 15px;
+    margin-bottom: 0px;
+}
+
+
+.login-corpo input[type=text], input[type=password], input[type=email]{
+    margin-bottom: 10px;
+    border: 1px solid #00b3ff;
+    border-radius: 4px;
+    height: 35px;
+    font-size: 15pt;
+}
+.login-corpo input[type=text]:focus, input[type=password]:focus, input[type=email]:focus{
+    outline: none;
+}
+
+.login h3{
+    margin-left: 12px;
+    user-select: none;
+}
+
+.cadastro h3{
+    margin-left: 12px;
+    user-select: none;
+}
+
+.produtos{
+    display: grid;
+    grid-template-columns: 3.3fr 3.3fr 3.3fr;
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+
+#valorProduto{
+    color: #00b3ff;
+    font-weight: bold;
+    font-family: SailecBold;
+    font-size: 13pt;
+    margin-left: 25px;
+}
+
+#valorCheio{
+    font-size: 10px;
+    margin-left: 25px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+.comprar{
+    width: 120px;
+    margin-top: 0px;
+    margin-left: 25px;
+    background-image: url("./img/icons/cart-plus-inverted.png");
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: 8px 3px;
+    text-indent: 20px;
+    font-weight: bold;
+    background-color: #43c4fa;
+}
+
+.entrar:hover{
+    background-color: #14b8ff
+}
+
+.entrar{
+    width: 100px;
+    margin-top: 15px;
+    font-weight: bold;
+    background-color: #43c4fa;
+}
+
+.entrar:hover{
+    background-color: #14b8ff
+}
+
+.produto{
+    min-width: 280px;
+    height: 380px;
+    margin: 20px;
+    box-shadow: -3px 3px 6px 5px rgba(0, 0, 0, 0.089);
+    border-radius: 5px;
+}
+
+.produto h4{
+    text-align: center;
+}
+
+.navbar{    
+    margin-bottom: 0px;
+    height: 80px;
+}
+
+.navbar-brand img{
+    margin-top: -20px;
+}
+
+a{
+    color: #000;
+}
+
+a:hover {
+    text-decoration: none;
+
+}
+
+.imgProduto{
+    width: 200px;
+    height: 200px;
+    margin-left: 42.5px;
+    margin-top: 10px;
+}
+
+.carrinho{
+    margin-top: 10px;
+    display: flex;
+}
+
+.carrinho img{
+    margin-bottom: 3px;
+    margin-left: 25px;
+}
+
+.nav-link{
+    font-size: 11pt;
+    font-family: SailecBold;
+}
+
+@font-face {
+    font-family: SailecBold;
+    src: url('./font/SailecBold.ttf');
+}
+
+.destaques{
+    max-width: 900px;
+    display: flex;
+    height: 80px;
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    box-shadow: -3px 3px 6px 5px rgba(0, 0, 0, 0.089);
+    border-radius: 5px;
+}
+
+.frete img{
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.frete{
+    display: flex;
+    width: 300px;
+}
+
+.frete h4{
+    font-family: SailecBold;
+    font-size: 12pt;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 20px;
+    width: 135px;
+}
+
+.frete p{
+    margin-left: -135px;
+    margin-top: 40px;
+}
+
+.pagamento{
+    width: 250px;
+    display: flex;
+}
+
+.pagamento img{
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.pagamento h4{
+    font-family: SailecBold;
+    font-size: 12pt;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 20px;
+    width: 135px;
+}
+
+.pagamento p{
+    margin-left: -135px;
+    margin-top: 40px;
+}
+
+.dest{
+    display: flex;
+    justify-content: center;
+}
+
+.seguranca{
+    width: 250px;
+    display: flex;
+}
+
+.seguranca img{
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.seguranca h4{
+    font-family: SailecBold;
+    font-size: 12pt;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top: 20px;
+    width: 135px;
+}
+
+.seguranca p{
+    margin-left: -135px;
+    margin-top: 40px;
+}
+
+#carrinho-vazio{
+    text-align: center;
+    font-family: SailecBold;
+    margin-top: 100px;
+    
+}
+.carrinho-produto-nome h3{
+    display:inline-block; 
+}
+.carrinho-vazio p{
+    text-align: center;
+    font-family: Roboto;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-style: italic;
+    opacity: .8;
+}
+.carrinho-produto-main{
+    display: grid;
+    grid-template-columns: 1.5fr 5fr 1fr 2.5fr;
+    grid-template-rows: 1;
+    width: 100%;
+    height: 120px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: -3px 3px 6px 5px rgba(0, 0, 0, 0.089);
+}
+.carrinho-produto-main h3{
+    grid-column: 2;
+    margin-top: 40px;
+}
+
+.carrinho-produto-preco{
+    grid-column: 4;
+    text-align: center;
+}
+.carrinho-produto-main h2{
+    grid-column: 4;
+    margin-top: 40px;
+}
+.carrinho-produtos{
+    margin-bottom: 70px;
+    margin-top: 40px;
+}
+
+#carrinho-titulo{
+    margin-top: 30px;
+    font-family: SailecBold;
+}
+
+.carrinho-produto-quantidade{
+    grid-column: 3;
+    grid-row: 1;
+    text-align: center;
+    margin-top: 10px;
+}
+#img-produto-carrinho{
+    width: 80px;
+    height: 80px;
+    grid-column: 1;
+}
+#unidade{
+    opacity: 0.8;
+    font-family: Roboto;
+}
+.botoes-carrinho{
+    width: 100%;
+    height: 60px;
+    margin-top: 25px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 2fr 6fr 2fr;
+    grid-template-rows: 1fr;
+    box-shadow: -3px 3px 6px 5px rgba(0, 0, 0, 0.089);
+}
+.checkout{
+    width: 120px;
+    height: 36px;
+    margin-top: 11px;
+    margin-left: 80px;
+    background-image: url("./img/icons/check2-inverted.png");
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: 8px 3px;
+    text-indent: 20px;
+    font-weight: bold;
+    background-color: #43c4fa;
+    grid-column: 3;
+}
+.limpar-carrinho{
+    width: 120px;
+    height: 36px;
+    margin-top: 11px;
+    margin-left: 25px;
+    background-image: url("./img/icons/trash-inverted.png");
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: 8px 3px;
+    text-indent: 20px;
+    font-weight: bold;
+    background-color: #43c4fa;
+    grid-column: 1;
+
+}
+
+.notificacao{
+    width: 250px;
+    height: 150px;
+    box-shadow: -3px 3px 6px 5px rgba(0, 0, 0, 0.089);
+    border-radius: 10px;
+    margin-right: 25px;
+    background-color: #fff;
+    animation: notificacoes-animation 6s ease-in-out; 
+    top: 10%;
+    right: 2%;
+    display: flex;
+    z-index: 10;
+    position: absolute;
+}
+#a-prod{
+    width: 80px;
+    height: 80px;
+    margin-top: 20px;
+    margin-left: 25%;
+}
+.notificacao h4{
+    text-align: center;
+    margin: auto;
+}
+
+@keyframes notificacoes-animation{
+    0% {
+        opacity: 0%;
+        transform: translateY(15px);
+    }
+    10%{
+        opacity: 100%;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 0%;
+    }
+}
+.pg-produto{
+    margin-top: 15px;
+    margin-left: 52.5px;
+}
+
+@media (min-width: 768px){
+    .navbar{
+        border-radius: 0px;
+    }
+}
