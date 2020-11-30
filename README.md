@@ -1,2 +1,3 @@
-# academic
+# academico
+
 Alguns exercícios do cotuca.
