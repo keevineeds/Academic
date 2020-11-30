@@ -1,0 +1,23 @@
+insert into Produto VALUES(1,'Lápis',2.00,100)
+insert into Produto VALUES(2,'Borracha',3.00,50)
+insert into Produto VALUES(3,'Caneta',3.00,90)
+insert into Produto VALUES(4,'Caderno',10.00,40)
+
+insert into Vendedor VALUES(1,'José')
+insert into Vendedor VALUES(2,'Maria')
+insert into Vendedor VALUES(3,'João')
+
+insert into Venda VALUES(1,'2020/02/10',2,14.00)
+insert into Venda VALUES(2,'2020/02/17',1,19.00)
+insert into Venda VALUES(3,'2020/03/04',3,16.00)
+insert into Venda VALUES(4,'2020/03/23',1,9.00)
+
+insert into VendaProduto VALUES(1,1,1,2)
+insert into VendaProduto VALUES(2,1,4,1)
+insert into VendaProduto VALUES(3,2,2,2)
+insert into VendaProduto VALUES(4,2,3,1)
+insert into VendaProduto VALUES(5,2,4,1)
+insert into VendaProduto VALUES(6,3,1,5)
+insert into VendaProduto VALUES(7,3,2,1)
+insert into VendaProduto VALUES(8,3,3,1)
+insert into VendaProduto VALUES(9,4,2,3)
